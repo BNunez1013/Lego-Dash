@@ -131,7 +131,12 @@ span a {
 }
 
 .navbar {
-  background-color: rgba(0, 212, 255, 1);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(143, 187, 204, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
   padding: 10px;
   position: fixed;
   top: 0;
@@ -160,4 +165,13 @@ span a {
 
 .navbar-list li a:hover {
   text-decoration: underline;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap');
+
+h1, h2, h3, body {
+  font-family: "Changa";
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }

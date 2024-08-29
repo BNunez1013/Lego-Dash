@@ -12,7 +12,7 @@ const Navbar = () => {
           <Link to="/collection">Collection</Link>
         </li>
         <li>
-          <Link to="/account">Account</Link>
+          <Link to="/lookup">Search Collection</Link>
         </li>
       </ul>
     </nav>
