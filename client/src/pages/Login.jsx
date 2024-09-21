@@ -44,7 +44,7 @@ const Login = () => {
         handleSuccess(message);
         setTimeout(() => {
           navigate("/");
-        }, 500);
+        }, 2500);
       } else {
         handleError(message);
       }

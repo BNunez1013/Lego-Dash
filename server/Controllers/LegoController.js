@@ -62,6 +62,9 @@ module.exports.addSet = async (req, res, next) => {
 
         //add set to users collection
         user.collection.push({set_num, name, year, num_parts, image_url, set_url});
+        console.log(num_parts);
+        user.pieceCount += num_parts;
+        console.log(user.pieceCount);
 
         //saves changes made to collection
         await user.save();

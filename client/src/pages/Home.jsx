@@ -9,6 +9,7 @@ const Home = () => {
   const navigate = useNavigate();
   const [cookies, removeCookie] = useCookies([]);
   const [username, setUsername] = useState("");
+  const [pieceCount, setPieceCount] = useState("");
   useEffect(() => {
     const verifyCookie = async () => {
       if (!cookies.token) {
@@ -19,13 +20,14 @@ const Home = () => {
         {},
         { withCredentials: true }
       );
-      const { status, user } = data;
+      const { status, user, pieceCount} = data;
       setUsername(user);
+      setPieceCount(pieceCount);
       return status
         ? toast(`Hello ${user}`, {
             position: "top-right",
           })
-        : (removeCookie("token"), navigate("/login"));
+        : (removeCookie("token"), navigate("/signup"));
     };
     verifyCookie();
   }, [cookies, navigate, removeCookie]);
@@ -41,6 +43,7 @@ const Home = () => {
           {" "}
           Welcome <span>{username}</span>
         </h4>
+        <h3>Your Current Piece Count is: <span>{pieceCount}</span></h3>
         <button onClick={Logout}>LOGOUT</button>
       </div>
       <ToastContainer />

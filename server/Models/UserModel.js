@@ -46,6 +46,10 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: new Date(),
     },
+    pieceCount: {
+        type: Number,
+        default: 0
+    },
     collection: [collectionSchema],
 });
 
